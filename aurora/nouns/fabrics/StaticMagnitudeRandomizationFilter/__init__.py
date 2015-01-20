@@ -1,0 +1,1 @@
+from StaticMagnitudeRandomizationFilter import StaticMagnitudeRandomizationFilter

@@ -1,0 +1,1 @@
+from StaticMagnitudeMaskingFilter import StaticMagnitudeMaskingFilter

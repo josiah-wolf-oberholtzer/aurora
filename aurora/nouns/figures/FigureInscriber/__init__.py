@@ -1,0 +1,1 @@
+from FigureInscriber import FigureInscriber

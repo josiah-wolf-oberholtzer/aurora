@@ -1,0 +1,1 @@
+from MagnitudeGoal import MagnitudeGoal

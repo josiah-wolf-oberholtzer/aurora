@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage[papersize={11in, 17in}]{geometry}
+\usepackage{pdfpages}
+\newcommand{\pdfdir}{../../build}
+\begin{document}
+
+\includepdf[pages=-]{\pdfdir/aurora__cover__front.pdf}
+\includepdf[pages=-]{\pdfdir/aurora__notes__large.pdf}
+\includepdf[pages=-]{\pdfdir/aurora__score.pdf}
+\includepdf[pages=-]{\pdfdir/aurora__cover__back.pdf}
+
+\end{document}

@@ -1,0 +1,1 @@
+from ChirpingFigureInscriber import ChirpingFigureInscriber

@@ -1,0 +1,1 @@
+from MockColorInscriber import MockColorInscriber

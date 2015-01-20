@@ -1,0 +1,28 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = LilyPond-Book
+
+\documentclass[10pt]{artikel3}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[papersize={11in, 17in}]{geometry}
+\usepackage{multicol}
+
+\makeatletter
+\newenvironment{figurehere}
+{\def\@captype{figure}}{}
+\makeatother
+
+\title{Performance Notes}
+\author{ }
+\date{ }
+
+\begin{document}
+\pagenumbering{roman}
+\maketitle
+
+\setlength{\columnsep}{50pt}
+\setlength{\columnseprule}{1pt}
+
+\input{aurora__notes__content.tex}
+
+\end{document}

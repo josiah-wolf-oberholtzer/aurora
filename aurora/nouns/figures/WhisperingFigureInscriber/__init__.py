@@ -1,0 +1,1 @@
+from WhisperingFigureInscriber import WhisperingFigureInscriber 

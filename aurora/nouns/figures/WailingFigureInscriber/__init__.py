@@ -1,0 +1,1 @@
+from WailingFigureInscriber import WailingFigureInscriber 
