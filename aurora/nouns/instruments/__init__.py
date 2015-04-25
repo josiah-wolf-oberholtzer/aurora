@@ -1,7 +1,8 @@
-from _Instrument import _Instrument
-from Cello import Cello
-from Contrabass import Contrabass
-from Viola import Viola
-from Violin import Violin
-from Voice import Voice
- 
+# -*- encoding: utf-8 -*-
+from abjad.tools import systemtools
+
+
+systemtools.ImportManager.import_structured_package(
+    __path__[0],
+    globals(),
+    )

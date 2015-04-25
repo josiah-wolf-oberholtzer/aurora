@@ -1,4 +1,4 @@
-from abjad.tools.indicatortools import Clef
+# -*- encoding: utf-8 -*-
 from abjad.tools.pitchtools import NumberedInterval
 from abjad.tools.pitchtools import NamedPitch
 from abjad.tools.pitchtools import PitchRange
@@ -16,7 +16,10 @@ class Viola(_Instrument):
 
     max_trill = NumberedInterval(7)
 
-    range = PitchRange((NamedPitch("c"), 'inclusive'), (NamedPitch("a''"), 'inclusive'))
+    range = PitchRange.from_pitches(
+        NamedPitch("c"),
+        NamedPitch("a''"),
+        )
 
     quadruple_sort = 'stop_offset'
 
@@ -25,13 +28,23 @@ class Viola(_Instrument):
         3: NamedPitch("g"),
         2: NamedPitch("d'"),
         1: NamedPitch("a'"),
-    }
+        }
 
     string_ranges = {
-        4: PitchRange((NamedPitch("c"), 'inclusive'), (NamedPitch("c'"), 'inclusive')),
-        3: PitchRange((NamedPitch("g"), 'inclusive'), (NamedPitch("g'"), 'inclusive')),
-        2: PitchRange((NamedPitch("d'"), 'inclusive'), (NamedPitch("d''"), 'inclusive')),
-        1: PitchRange((NamedPitch("a'"), 'inclusive'), (NamedPitch("a''"), 'inclusive')),
-    }
-
-
+        4: PitchRange.from_pitches(
+            NamedPitch("c"),
+            NamedPitch("c'"),
+            ),
+        3: PitchRange.from_pitches(
+            NamedPitch("g"),
+            NamedPitch("g'"),
+            ),
+        2: PitchRange.from_pitches(
+            NamedPitch("d'"),
+            NamedPitch("d''"),
+            ),
+        1: PitchRange.from_pitches(
+            NamedPitch("a'"),
+            NamedPitch("a''"),
+            ),
+        }
