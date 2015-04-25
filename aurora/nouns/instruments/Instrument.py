@@ -2,7 +2,7 @@
 from abjad.tools.abctools import AbjadValueObject
 
 
-class _Instrument(AbjadValueObject):
+class Instrument(AbjadValueObject):
     '''Abstract parent class of all instruments.
     An instrument is a collection of orchestrational information,
     such as range, but also a registration of technical capacity

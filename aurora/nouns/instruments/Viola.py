@@ -2,10 +2,10 @@
 from abjad.tools.pitchtools import NumberedInterval
 from abjad.tools.pitchtools import NamedPitch
 from abjad.tools.pitchtools import PitchRange
-from aurora.nouns.instruments._Instrument import _Instrument
+from aurora.nouns.instruments.Instrument import Instrument
 
 
-class Viola(_Instrument):
+class Viola(Instrument):
     '''Model of the viola as an instrument.
     
     ::

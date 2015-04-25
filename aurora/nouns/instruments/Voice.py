@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
-from aurora.nouns.instruments._Instrument import _Instrument
+from aurora.nouns.instruments.Instrument import Instrument
 
 
-class Voice(_Instrument):
+class Voice(Instrument):
     '''Model of the voice as an instrument.'''
     pass

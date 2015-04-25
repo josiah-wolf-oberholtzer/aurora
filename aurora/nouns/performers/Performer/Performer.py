@@ -1,5 +1,5 @@
 from collections import Iterable
-from aurora.nouns.instruments import _Instrument
+from aurora.nouns.instruments import Instrument
 from abjad.tools.abctools import AbjadObject
 
 
@@ -10,7 +10,7 @@ class Performer(AbjadObject):
     def __init__(self, name, instruments):
         assert isinstance(name, str) and len(name)
         assert isinstance(instruments, Iterable) and len(instruments)
-        assert all([isinstance(x, _Instrument) for x in instruments])
+        assert all([isinstance(x, Instrument) for x in instruments])
         object.__setattr__(self, '_name', name)
         object.__setattr__(self, '_instruments', tuple(set(instruments)))
 

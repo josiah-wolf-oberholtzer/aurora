@@ -2,10 +2,10 @@
 from abjad.tools.pitchtools import NumberedInterval
 from abjad.tools.pitchtools import NamedPitch
 from abjad.tools.pitchtools import PitchRange
-from aurora.nouns.instruments._Instrument import _Instrument
+from aurora.nouns.instruments.Instrument import Instrument
 
 
-class Contrabass(_Instrument):
+class Contrabass(Instrument):
     '''Model of the contrabass as an instrument.
 
     ::
