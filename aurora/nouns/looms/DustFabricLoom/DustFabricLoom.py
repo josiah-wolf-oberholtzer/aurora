@@ -9,7 +9,7 @@ from aurora.utils.mathutils import scale_value
 
 class DustFabricLoom(_FabricLoom):
 
-    def __init__(self, ensemble, duration, seed = 0):
+    def __init__(self, ensemble, duration, seed=0):
         assert isinstance(ensemble, Ensemble)
         assert 0 < duration
         quantization = Duration(1, 32)
@@ -20,20 +20,30 @@ class DustFabricLoom(_FabricLoom):
         duration_goal = MagnitudeGoal(duration)
         depth_density_goal = DepthDensityGoal(Duration(1, 2))
         goals = [duration_goal, depth_density_goal]
-        generator = NonReferencingGenerator(duration_domain, offset_domain, goals, seed = seed)
+        generator = NonReferencingGenerator(duration_domain, offset_domain, goals, seed=seed)
 
         ### FILTERS ###
         random.seed(seed)
         gravity_wells = [
-            [random.random(),
-            scale_value(random.random(), 0, 1, 0.3, 1),
-            scale_value(random.random(), 0, 1, 0.25, 0.75),]
-            for i in range(random.randint(3, 5))]
+            [
+                random.random(),
+                scale_value(random.random(), 0, 1, 0.3, 1),
+                scale_value(random.random(), 0, 1, 0.25, 0.75),
+                ]
+            for i in range(random.randint(3, 5))
+            ]
         gravity_filter = GravityFilter(gravity_wells)
         filters = [gravity_filter]
 
         ### RESOLVER ###
-        resolver = HeuristicShufflingResolver(ensemble, op = 'xor', seed = seed)
+        resolver = HeuristicShufflingResolver(ensemble, op='xor', seed=seed)
 
         ### INIT ###
-        _FabricLoom.__init__(self, ensemble, generator, filters, resolver)
+        _FabricLoom.__init__(
+            self,
+            ensemble,
+            generator,
+            filters,
+            resolver,
+            seed=seed,
+            )

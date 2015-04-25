@@ -25,7 +25,7 @@ class _FabricLoom(AbjadObject):
 
     ### INITIALIZER ###
 
-    def __init__(self, ensemble, generator, filters, resolver, seed):
+    def __init__(self, ensemble, generator, filters, resolver, seed=0):
         assert isinstance(ensemble, Ensemble)
         assert isinstance(generator, Generator)
         assert isinstance(filters, Iterable)

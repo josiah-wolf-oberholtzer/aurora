@@ -8,7 +8,7 @@ from aurora.nouns.trajectories import *
 
 class ChantFabricLoom(_FabricLoom):
 
-    def __init__(self, ensemble, duration, frequency = Duration(1, 2), seed = 0):
+    def __init__(self, ensemble, duration, frequency=Duration(1, 2), seed=0):
         assert isinstance(ensemble, Ensemble)
         assert 0 < duration
         quantization = Duration(1, 32)
@@ -18,7 +18,7 @@ class ChantFabricLoom(_FabricLoom):
         offset_domain = Domain([frequency])
         duration_goal = MagnitudeGoal(duration)
         goals = [duration_goal]
-        generator = BackReferencingGenerator(duration_domain, offset_domain, goals, seed = seed)
+        generator = BackReferencingGenerator(duration_domain, offset_domain, goals, seed=seed)
 
         ### FILTERS ###
         random.seed(seed)
@@ -33,7 +33,14 @@ class ChantFabricLoom(_FabricLoom):
         filters = [duplication_filter, smrf, sorf]
 
         ### RESOLVER ###
-        resolver = HeuristicShufflingResolver(ensemble, seed = seed)
+        resolver = HeuristicShufflingResolver(ensemble, seed=seed)
 
         ### INIT ###
-        _FabricLoom.__init__(self, ensemble, generator, filters, resolver)
+        _FabricLoom.__init__(
+            self,
+            ensemble,
+            generator,
+            filters,
+            resolver,
+            seed=seed
+            )

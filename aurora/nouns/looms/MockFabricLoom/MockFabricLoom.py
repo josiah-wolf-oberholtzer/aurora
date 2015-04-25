@@ -7,7 +7,7 @@ from aurora.nouns.trajectories import *
 
 class MockFabricLoom(_FabricLoom):
 
-    def __init__(self, ensemble, duration, seed = 0):
+    def __init__(self, ensemble, duration, seed=0):
         assert isinstance(ensemble, Ensemble)
         assert 0 < duration
         quantization = Duration(1, 32)
@@ -17,14 +17,20 @@ class MockFabricLoom(_FabricLoom):
         offset_domain = Domain([0])
         interval_count_goal = IntervalCountGoal(len(ensemble))
         goals = [interval_count_goal]
-        generator = NonReferencingGenerator(duration_domain, offset_domain, goals, seed = seed)
+        generator = NonReferencingGenerator(duration_domain, offset_domain, goals, seed=seed)
 
         # FILTERS
         filters = []
 
         # RESOLVER
-        resolver = HeuristicShufflingResolver(ensemble, seed = seed)
+        resolver = HeuristicShufflingResolver(ensemble, seed=seed)
 
         # INIT
-        _FabricLoom.__init__(self, ensemble, generator, filters, resolver)
-
+        _FabricLoom.__init__(
+            self,
+            ensemble,
+            generator,
+            filters,
+            resolver,
+            seed=seed,
+            )

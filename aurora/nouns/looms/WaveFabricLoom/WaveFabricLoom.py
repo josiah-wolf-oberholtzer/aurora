@@ -7,7 +7,7 @@ from aurora.nouns.trajectories import *
 
 class WaveFabricLoom(_FabricLoom):
 
-    def __init__(self, ensemble, duration, seed = 0):
+    def __init__(self, ensemble, duration, seed=0):
         assert isinstance(ensemble, Ensemble)
         assert 0 < duration
         quantization = Duration(1, 32)
@@ -18,7 +18,7 @@ class WaveFabricLoom(_FabricLoom):
         duration_goal = MagnitudeGoal(duration)
         depth_density_goal = DepthDensityGoal(2)
         goals = [duration_goal, depth_density_goal]
-        generator = NonReferencingGenerator(duration_domain, offset_domain, goals, seed = seed)
+        generator = NonReferencingGenerator(duration_domain, offset_domain, goals, seed=seed)
 
         ### FILTERS ###
         gravity_filter = GravityFilter([[0.5, 1, 0.5], [0.5, 0.5, 0.25], [0.5, 0.25, 0.25]])
@@ -27,7 +27,14 @@ class WaveFabricLoom(_FabricLoom):
         filters = [gravity_filter, dmcf]
 
         ### RESOLVER ###
-        resolver = HeuristicShufflingResolver(ensemble, op = 'xor', seed = seed)
+        resolver = HeuristicShufflingResolver(ensemble, op='xor', seed=seed)
 
         ### INIT ###
-        _FabricLoom.__init__(self, ensemble, generator, filters, resolver)
+        _FabricLoom.__init__(
+            self,
+            ensemble,
+            generator,
+            filters,
+            resolver,
+            seed=seed,
+            )

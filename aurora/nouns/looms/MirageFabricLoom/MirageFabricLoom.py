@@ -7,7 +7,7 @@ from aurora.nouns.trajectories import *
 
 class MirageFabricLoom(_FabricLoom):
 
-    def __init__(self, ensemble, duration, frequency = Duration(1, 4), seed = 0):
+    def __init__(self, ensemble, duration, frequency=Duration(1, 4), seed=0):
         assert isinstance(ensemble, Ensemble)
         assert 0 < duration
         assert 0 < frequency
@@ -18,7 +18,7 @@ class MirageFabricLoom(_FabricLoom):
         offset_domain = Domain([frequency])
         duration_goal = MagnitudeGoal(duration)
         goals = [duration_goal]
-        generator = BackReferencingGenerator(duration_domain, offset_domain, goals, seed = seed)
+        generator = BackReferencingGenerator(duration_domain, offset_domain, goals, seed=seed)
 
         ### FILTERS ###
         traj = generate_window_trajectory('cos', 100).scale(1, 0)
@@ -27,7 +27,14 @@ class MirageFabricLoom(_FabricLoom):
         filters = [dmrf, dorf]
 
         ### RESOLVER ###
-        resolver = HeuristicShufflingResolver(ensemble, seed = seed)
+        resolver = HeuristicShufflingResolver(ensemble, seed=seed)
 
         ### INIT ###
-        _FabricLoom.__init__(self, ensemble, generator, filters, resolver)
+        _FabricLoom.__init__(
+            self,
+            ensemble,
+            generator,
+            filters,
+            resolver,
+            seed=seed,
+            )
