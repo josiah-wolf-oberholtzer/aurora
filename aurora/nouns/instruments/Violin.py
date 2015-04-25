@@ -6,7 +6,15 @@ from aurora.nouns.instruments._Instrument import _Instrument
 
 
 class Violin(_Instrument):
-    '''Model of the violin as an instrument.'''
+    '''Model of the violin as an instrument.
+
+    ::
+
+        >>> import aurora
+        >>> aurora.nouns.instruments.Violin()
+        Violin()
+
+    '''
 
     name, short_name = 'Violin', 'Vln.'
 

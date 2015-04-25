@@ -6,7 +6,15 @@ from aurora.nouns.instruments._Instrument import _Instrument
 
 
 class Contrabass(_Instrument):
-    '''Model of the contrabass as an instrument.'''
+    '''Model of the contrabass as an instrument.
+
+    ::
+
+        >>> import aurora
+        >>> aurora.nouns.instruments.Contrabass()
+        Contrabass()
+
+    '''
 
     name, short_name = 'Contrabass', 'Cb.'
 

@@ -29,4 +29,4 @@ class _Instrument(AbjadValueObject):
 
     @property
     def _format_string(self):
-        return ' '
+        return ''
