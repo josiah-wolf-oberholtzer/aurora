@@ -2,7 +2,7 @@ from copy import copy
 from aurora.nouns.colors.ColorInscriber import ColorInscriber
 from aurora.nouns.envelopes.EnvelopeInscriber import EnvelopeInscriber
 from aurora.nouns.fabrics import Fabric
-from aurora.nouns.looms._FabricLoom import _FabricLoom
+from aurora.nouns.looms.FabricLoom import FabricLoom
 from aurora.nouns.figures.FigureInscriber import FigureInscriber
 from aurora.nouns.pitches.PitchInscriber import PitchInscriber
 from abjad.tools.abctools import AbjadObject
@@ -30,7 +30,7 @@ class Aggregate(AbjadObject):
         color_inscriber=None,
         envelope_inscriber=None,
         ):
-        assert isinstance(fabric_loom, _FabricLoom)
+        assert isinstance(fabric_loom, FabricLoom)
         assert isinstance(figure_inscriber, FigureInscriber)
         assert isinstance(pitch_inscriber, PitchInscriber)
         assert isinstance(color_inscriber, ColorInscriber)

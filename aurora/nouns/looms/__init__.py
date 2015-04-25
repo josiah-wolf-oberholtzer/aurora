@@ -1,10 +1,8 @@
-from BurstFabricLoom import BurstFabricLoom
-from ChantFabricLoom import ChantFabricLoom
-from CloudFabricLoom import CloudFabricLoom
-from DustFabricLoom import DustFabricLoom
-from EchoFabricLoom import EchoFabricLoom
-from FogFabricLoom import FogFabricLoom
-from MirageFabricLoom import MirageFabricLoom
-from MockFabricLoom import MockFabricLoom
-from SparkFabricLoom import SparkFabricLoom
-from WaveFabricLoom import WaveFabricLoom
+# -*- encoding: utf-8 -*-
+from abjad.tools import systemtools
+
+
+systemtools.ImportManager.import_structured_package(
+    __path__[0],
+    globals(),
+    )

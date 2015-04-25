@@ -2,11 +2,11 @@ import random
 from abjad import Duration
 from aurora.nouns.ensembles import Ensemble
 from aurora.nouns.fabrics import *
-from aurora.nouns.looms._FabricLoom import _FabricLoom
+from aurora.nouns.looms.FabricLoom import FabricLoom
 from aurora.nouns.trajectories import *
 
 
-class ChantFabricLoom(_FabricLoom):
+class ChantFabricLoom(FabricLoom):
 
     def __init__(self, ensemble, duration, frequency=Duration(1, 2), seed=0):
         assert isinstance(ensemble, Ensemble)
@@ -36,7 +36,7 @@ class ChantFabricLoom(_FabricLoom):
         resolver = HeuristicShufflingResolver(ensemble, seed=seed)
 
         ### INIT ###
-        _FabricLoom.__init__(
+        FabricLoom.__init__(
             self,
             ensemble,
             generator,

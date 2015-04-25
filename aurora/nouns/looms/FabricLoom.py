@@ -7,7 +7,7 @@ from aurora.nouns.fabrics.Resolver import Resolver
 from abjad.tools.abctools import AbjadObject
 
 
-class _FabricLoom(AbjadObject):
+class FabricLoom(AbjadObject):
 
     ### CLASS VARIABLES ###
 

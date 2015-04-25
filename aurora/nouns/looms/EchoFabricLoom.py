@@ -1,11 +1,11 @@
 from abjad import Duration
 from aurora.nouns.ensembles import Ensemble
 from aurora.nouns.fabrics import *
-from aurora.nouns.looms._FabricLoom import _FabricLoom
+from aurora.nouns.looms.FabricLoom import FabricLoom
 from aurora.nouns.trajectories import *
 
 
-class EchoFabricLoom(_FabricLoom):
+class EchoFabricLoom(FabricLoom):
 
     def __init__(self, ensemble, duration, seed=0):
         assert isinstance(ensemble, Ensemble)
@@ -30,7 +30,7 @@ class EchoFabricLoom(_FabricLoom):
         resolver = HeuristicShufflingResolver(ensemble, op='xor')
 
         ### INIT ###
-        _FabricLoom.__init__(
+        FabricLoom.__init__(
             self,
             ensemble,
             generator,

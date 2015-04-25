@@ -1,11 +1,11 @@
 from abjad import Duration
 from aurora.nouns.ensembles import Ensemble
 from aurora.nouns.fabrics import *
-from aurora.nouns.looms._FabricLoom import _FabricLoom
+from aurora.nouns.looms.FabricLoom import FabricLoom
 from aurora.nouns.trajectories import *
 
 
-class SparkFabricLoom(_FabricLoom):
+class SparkFabricLoom(FabricLoom):
 
     def __init__(self, ensemble, seed=0):
         assert isinstance(ensemble, Ensemble)
@@ -25,7 +25,7 @@ class SparkFabricLoom(_FabricLoom):
         resolver = HeuristicShufflingResolver(ensemble, seed=seed)
 
         ### INIT ###
-        _FabricLoom.__init__(
+        FabricLoom.__init__(
             self,
             ensemble,
             generator,
