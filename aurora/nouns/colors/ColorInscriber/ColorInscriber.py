@@ -1,5 +1,5 @@
 import random
-from collections import Iterable
+import collections
 from aurora.nouns.colors import *
 from aurora.nouns.colors import Touch, Pressure, Position
 from aurora.nouns.fabrics import Fabric
@@ -13,15 +13,27 @@ class ColorInscriber(AbjadObject):
 
     __slots__ = ('_reference', '_seed',)
 
-    def __init__(self, touches, positions, pressures, \
-        reference = 'centroid', seed = 0):
-        assert isinstance(touches, Iterable) and len(touches) and \
-            all([isinstance(x, Touch) for x in touches])
-        assert isinstance(positions, Iterable) and len(touches) and \
-            all([isinstance(x, Position) for x in positions])
-        assert isinstance(pressures, Iterable) and len(touches) and \
-            all([isinstance(x, Pressure) for x in pressures])
-        assert reference in ['centroid', 'start_offset', 'stop_offset']
+    def __init__(
+        self,
+        touches,
+        positions,
+        pressures,
+        reference='centroid',
+        seed=0,
+        ):
+        if not isinstance(touches, collections.Sequence):
+            touches = (touches,)
+        assert len(touches)
+        assert all(isinstance(x, Touch) for x in touches)
+        if not isinstance(positions, collections.Sequence):
+            positions = (positions,)
+        assert len(positions)
+        assert all(isinstance(x, Position) for x in positions)
+        if not isinstance(pressures, collections.Sequence):
+            pressures = (pressures,)
+        assert len(pressures)
+        assert all(isinstance(x, Pressure) for x in pressures)
+        assert reference in ['centroid', 'start_offset', 'stop_offset'], reference
         object.__setattr__(self, '_touches', tuple(touches))
         object.__setattr__(self, '_positions', tuple(positions))
         object.__setattr__(self, '_pressures', tuple(pressures))
@@ -57,7 +69,7 @@ class ColorInscriber(AbjadObject):
         return ' '
 
     ### PRIVATE METHODS ###
-    
+
     def _exec(self, fabric, start_offset, stop_offset):
         for performer, inventory in fabric.iteritems():
             for timespan in inventory:
@@ -107,7 +119,7 @@ class ColorInscriber(AbjadObject):
     @property
     def reference(self):
         return self._reference
-            
+
     @property
     def seed(self):
         return self._seed

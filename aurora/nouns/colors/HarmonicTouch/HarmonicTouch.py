@@ -10,4 +10,3 @@ class HarmonicTouch(Touch):
 
     def __str__(self):
         return 'harmonic'
-
