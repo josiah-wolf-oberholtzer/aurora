@@ -2,7 +2,7 @@
 \include "english.ly"
 
 #(set-default-paper-size "letter" 'portrait)
-#(set-global-staff-size 5.5)
+#(set-global-staff-size 5.25)
 
 \include "stylesheet.ly"
 
@@ -10,10 +10,10 @@
     indent = 10\mm
     short-indent = 10\mm
 
-    bottom-margin = 10\mm
-    left-margin = 10\mm
-    right-margin = 0.5\in
-    top-margin = 10\mm
+    bottom-margin = 1\in
+    left-margin = 1\in
+    right-margin = 1\in
+    top-margin = 1\in
 
     oddHeaderMarkup = \markup {}
     evenHeaderMarkup = \markup {}
