@@ -43,8 +43,6 @@
         \fill-line {
             \override #'(font-name . "Didot")
                 \bold \fontsize #3 "Aurora"
-            \override #'(font-name . "Didot")
-                \bold \fontsize #3 \date
             \concat {
                 \override #'(font-name . "Didot")
                     \bold \fontsize #3
@@ -60,8 +58,6 @@
                         \on-the-fly #print-page-number-check-first
                         \fromproperty #'page:page-number-string
                 }
-            \override #'(font-name . "Didot")
-                \bold \fontsize #3 \date
             \override #'(font-name . "Didot")
                 \bold \fontsize #3 "Aurora"
             }
