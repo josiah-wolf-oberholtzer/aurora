@@ -1,5 +1,7 @@
 \version "2.17.19"
 
+fppp = #(make-dynamic-script "fppp")
+
 \header {
     composer = \markup {
         \column {
@@ -145,11 +147,10 @@
         \Score
         \accepts SectionStaffGroup
 		\override BarLine.layer = #5
-		\override BarNumber.break-visibility = #'#(#f #t #t)
 		\override BarNumber.font-size = #4
 		\override BarNumber.padding = #5
 		\override BarNumber.self-alignment-X = #CENTER
-		\override BarNumber.stencil = #(make-stencil-boxer 0.1 1.0 ly:text-interface::print)
+		\override BarNumber.stencil = #(make-stencil-circler 0.1 1.0 ly:text-interface::print)
 		\override Beam.auto-knee-gap = #10
 		\override Beam.breakable = ##t
 		\override DynamicLineSpanner.Y-extent = #'(-1.5 . 1.5)
@@ -168,8 +169,12 @@
 		\override MetronomeMark.font-series = #'bold
 		\override MetronomeMark.font-size = #4
 		\override MetronomeMark.padding = #5
+        \override MultiMeasureRest.expand-limit = #1
 		\override NoteColumn.ignore-collision = ##t
-		\override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/32)
+        \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1 32)
+        \override SpacingSpanner.strict-grace-spacing = ##f
+        \override SpacingSpanner.strict-note-spacing = ##f
+        \override SpacingSpanner.uniform-stretching = ##t
 		\override SpanBar.layer = #5
 		\override StaffSymbol.layer = #1
 		\override Stem.stemlet-length = #1.5
@@ -179,9 +184,28 @@
 		\override TrillPitchAccidental.whiteout = ##t
 		\override TrillPitchHead.layer = #4
 		\override TrillPitchHead.whiteout = ##t
-		\override TupletBracket.padding = #2
-		\override TupletNumber.font-size = #2
+        \override TupletBracket.breakable = ##t
+        \override TupletBracket.full-length-padding = 1.5
+        \override TupletBracket.full-length-to-extent = ##f
+        \override TupletBracket.padding = 1.5
+        \override TupletBracket.outside-staff-padding = 0.75
+        \override TupletNumber.font-size = 1
+        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+        \override StaffGrouper.staffgroup-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 5)
+            (stretchability . 0)
+            )
+        \override StaffGrouper.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 5)
+            (stretchability . 0)
+            )
 		harmonicDots = ##t
 		subdivideBeams = ##t
+        proportionalNotationDuration = #(ly:make-moment 1 32)
+        tupletFullLength = ##t
     }
 }
