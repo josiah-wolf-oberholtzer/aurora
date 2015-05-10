@@ -147,6 +147,7 @@ fppp = #(make-dynamic-script "fppp")
         \Score
         \accepts SectionStaffGroup
 		\override BarLine.layer = #5
+        \override BarNumber.font-name = "Didot Italic"
 		\override BarNumber.font-size = #4
 		\override BarNumber.padding = #5
 		\override BarNumber.self-alignment-X = #CENTER
@@ -162,10 +163,10 @@ fppp = #(make-dynamic-script "fppp")
 		\override Glissando.springs-and-rods = #ly:spanner::set-spacing-rods
 		\override Glissando.thickness = #2
 		\override Hairpin.minimum-length = #5
-		\override InstrumentName.font-series = #'bold
-		\override InstrumentName.font-shape = #'upright
-		\override InstrumentName.font-size = #2
-		\override InstrumentName.padding = #4
+		\override InstrumentName.font-name = "Didot"
+		\override InstrumentName.padding = 2
+		\override InstrumentName.font-size = 3
+        \override InstrumentName.self-alignment-X = #RIGHT
 		\override MetronomeMark.font-series = #'bold
 		\override MetronomeMark.font-size = #4
 		\override MetronomeMark.padding = #5
@@ -194,14 +195,20 @@ fppp = #(make-dynamic-script "fppp")
         \override StaffGrouper.staffgroup-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 0)
-            (padding . 5)
-            (stretchability . 0)
+            (padding . 3)
+            (stretchability . 100)
             )
         \override StaffGrouper.staff-staff-spacing = #'(
             (basic-distance . 0)
             (minimum-distance . 0)
-            (padding . 5)
-            (stretchability . 0)
+            (padding . 3)
+            (stretchability . 100)
+            )
+        \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 0)
+            (minimum-distance . 0)
+            (padding . 3)
+            (stretchability . 100)
             )
 		harmonicDots = ##t
 		subdivideBeams = ##t
