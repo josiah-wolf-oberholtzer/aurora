@@ -45,7 +45,7 @@ class PartTranscriber(AbjadObject):
         performer_name = lily.score_block[0][0].name
         lily.default_paper_size = ('a4', 'portrait')
         lily.global_staff_size = 10
-        lily.header_block.composer = 'Josiah Wolf Oberholtzer (1984)'
+        lily.header_block.composer = 'Joséphine Wolf Oberholtzer (1984)'
         lily.header_block.dedication = 'for Ensemble Kaleidoskop'
         lily.header_block.instrument = schemetools.Scheme(
             performer_name,
@@ -76,9 +76,9 @@ class PartTranscriber(AbjadObject):
         lily.paper_block.bottom_margin = lilypondfiletools.LilyPondDimension(0.75, 'in')        
 
         lily.paper_block.oddFooterMarkup = markuptools.Markup( \
-            '\\fill-line { "josiah wolf oberholtzer - "mbrsi/aurora" - %s" }' % performer_name.lower())
+            '\\fill-line { "joséphine wolf oberholtzer - "mbrsi/aurora" - %s" }' % performer_name.lower())
         lily.paper_block.evenFooterMarkup = markuptools.Markup( \
-            '\\fill-line { "%s - "mbrsi/aurora" - josiah wolf oberholtzer" }' % performer_name.lower())
+            '\\fill-line { "%s - "mbrsi/aurora" - joséphine wolf oberholtzer" }' % performer_name.lower())
 
     def _polish_score(self, lily):
         score = lily.score_block[0]
