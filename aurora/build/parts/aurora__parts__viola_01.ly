@@ -9,7 +9,7 @@
 #(set-global-staff-size 10)
 
 \header {
-	composer = #"Josiah Wolf Oberholtzer (1984)"
+	composer = #"Joséphine Wolf Oberholtzer (1984)"
 	dedication = #"for Ensemble Kaleidoskop"
 	instrument = #"Viola 01"
 	tagline = \markup { "" }
@@ -21,10 +21,10 @@
 	between-system-spacing = #'((space . 0) (padding . 2) (stretchability . 0) (minimum-distance . 0))
 	bottom-margin = 0.75\in
 	bottom-system-spacing = #'((space . 0) (padding . 4) (stretchability . 0) (minimum-distance . 0))
-	evenFooterMarkup = \markup { \fill-line { "viola 01 - mbrsi/aurora - josiah wolf oberholtzer" } }
+	evenFooterMarkup = \markup { \fill-line { "viola 01 - mbrsi/aurora - joséphine wolf oberholtzer" } }
 	left-margin = 0.75\in
 	max-systems-per-page = #8
-	oddFooterMarkup = \markup { \fill-line { "josiah wolf oberholtzer - mbrsi/aurora - viola 01" } }
+	oddFooterMarkup = \markup { \fill-line { "joséphine wolf oberholtzer - mbrsi/aurora - viola 01" } }
 	print-page-number = ##t
 	ragged-bottom = ##f
 	ragged-last-bottom = ##t

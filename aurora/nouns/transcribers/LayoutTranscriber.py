@@ -35,7 +35,7 @@ class LayoutTranscriber(AbjadObject):
             force_quotes=True,
             )
         lily.header_block.subtitle = 'for String Orchestra'
-        lily.header_block.composer = 'Josiah Wolf Oberholtzer (1984)'
+        lily.header_block.composer = 'Joséphine Wolf Oberholtzer (1984)'
         lily.paper_block.indent = 0
         lily.paper_block.max_systems_per_page = 1
         lily.paper_block.minimal_page_breaking = True
@@ -46,8 +46,8 @@ class LayoutTranscriber(AbjadObject):
         lily.paper_block.tagline = False
         lily.paper_block.right_margin = lilypondfiletools.LilyPondDimension(1, 'in')
         lily.paper_block.left_margin = lilypondfiletools.LilyPondDimension(1.5, 'in')
-        lily.paper_block.oddFooterMarkup = markuptools.Markup('\\fill-line { "josiah wolf oberholtzer - "mbrsi/aurora"" }')
-        lily.paper_block.evenFooterMarkup = markuptools.Markup('\\fill-line { ""mbrsi/aurora" - josiah wolf oberholtzer" }')
+        lily.paper_block.oddFooterMarkup = markuptools.Markup('\\fill-line { "joséphine wolf oberholtzer - "mbrsi/aurora"" }')
+        lily.paper_block.evenFooterMarkup = markuptools.Markup('\\fill-line { ""mbrsi/aurora" - joséphine wolf oberholtzer" }')
 
     def _polish_score(self, lily):
         score = lily.score_block.items[0]
